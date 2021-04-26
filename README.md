@@ -1,8 +1,10 @@
 # HotwiredComponent
-HotwiredComponent adds Hotwired centered generators for Github's ViewComponent
+HotwiredComponent adds Hotwired centered generators for Github's [ViewComponent](https://github.com/github/view_component) utilizing 
+the side car metod. Components generated using this gem will by convention also generate an `scss` file and Stimulus controller.
+Components are class namespaced by their name, and by default every component has a stimulus controller.
 
 ## Usage
-
+`rails g hotwire_component:component My::Widget`
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -14,6 +16,12 @@ gem 'hotwired_component'
 And then execute:
 ```bash
 $ bundle
+```
+
+And run:
+
+```bash
+$ rails g hotwired_component:install
 ```
 
 ## License
