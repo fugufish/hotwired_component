@@ -1,0 +1,11 @@
+Description:
+  Generates Hotwired compatible ViewComponents
+
+Example:
+    bin/rails generate hc:component Thing
+
+    This will create:
+      - components/thing_component.rb
+      - components/thing/thing_component.scss
+      - components/thing/thing_component.html.erb
+      - components/thing/component_controller.js
