@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Hc
+module HotwiredComponent
   ##
   # Generates ViewComponents with Stimulus/Hotwire
   class ComponentGenerator < Rails::Generators::NamedBase
@@ -50,7 +50,7 @@ module Hc
       template(
         "component_spec.rb.erb",
         File.join("spec/components", class_path,
-                  "#{file_name}_component_spec.rb")
+          "#{file_name}_component_spec.rb")
       )
     end
 
