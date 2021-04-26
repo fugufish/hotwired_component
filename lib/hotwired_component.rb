@@ -1,3 +1,5 @@
+require "hotwire-rails"
+
 require "hotwired_component/version"
 require "hotwired_component/engine"
 
