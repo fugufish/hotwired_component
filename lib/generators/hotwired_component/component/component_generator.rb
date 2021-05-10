@@ -48,9 +48,9 @@ module HotwiredComponent
 
     def create_test_file
       template(
-        "component_spec.rb.erb",
-        File.join("spec/components", class_path,
-          "#{file_name}_component_spec.rb")
+        "component_test.rb.erb",
+        File.join("test/components", class_path,
+          "#{file_name}_component_test.rb")
       )
     end
 
