@@ -2,9 +2,9 @@ module HotwiredComponent
   class InstallGenerator < Rails::Generators::Base
     source_root File.expand_path('templates', __dir__)
 
-    # def install_hotwired_rails
-    #   rake "hotwire:install"
-    # end
+    def install_hotwired_rails
+      rake "hotwire:install"
+    end
 
     def add_application_component
       template "application_component.rb.erb", 

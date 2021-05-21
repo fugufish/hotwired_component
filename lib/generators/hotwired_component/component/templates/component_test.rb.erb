@@ -1,7 +1,0 @@
-# frozen_string_literal: true
-
-<% indent_level = 0 %><% class_name.split('::')[0..-2].each do |name| %><%= " " * indent_level %>module <%= name %>
-<% indent_level += 2 %><% end %><%= " " * indent_level %>class <%= class_name.split("::").last %>ComponentTest < ViewComponent::TestCase
-<%= " " * indent_level %>end<% class_name.split("::")[0..-2].length.times do %><% indent_level -= 2 %>
-<%= " " * indent_level %>end<% end %>
-
