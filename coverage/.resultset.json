@@ -1,0 +1,85 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/fugufish/Code/hotwired_component/lib/hotwired_component.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/fugufish/Code/hotwired_component/lib/hotwired_component/engine.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/fugufish/Code/hotwired_component/config/routes.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/fugufish/Code/hotwired_component/app/components/hotwired_component/forms/input_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/fugufish/Code/hotwired_component/app/components/hotwired_component/base_component.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1621698642
+  }
+}
