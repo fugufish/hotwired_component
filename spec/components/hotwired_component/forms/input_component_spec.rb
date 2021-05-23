@@ -16,7 +16,7 @@ RSpec.describe HotwiredComponent::Forms::InputComponent, type: :component do
 
   let(:css_classes) do
     "input#mock_model_field.hotwired-component-forms-text.a-class[type='text']" \
-      "[data-controller='hotwired-component--forms--text']" \
+      "[data-controller='hotwired-component--forms--text-component']" \
       "[name='mock_model[field]']"
   end
 

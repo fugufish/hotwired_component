@@ -16,7 +16,7 @@ module HotwiredComponent
           name:  "#{object_name}[#{method}]",
           class: css_classes(options.delete(:class)),
           data:  {
-            controller: "hotwired-component--forms--#{INPUT_TYPE}"
+            controller: "hotwired-component--forms--#{INPUT_TYPE}-component"
           }
         )
       end
