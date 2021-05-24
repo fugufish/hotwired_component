@@ -2,62 +2,66 @@
 
 require "rails_helper"
 
-RSpec.describe HotwiredComponent::Tw::Forms::LabelComponent, type: :view do
-  let(:method)      { :email }
-  let(:object_name) { "user" }
-  let(:value)       { nil }
-  let(:alt)         { nil }
-  let(:options)     { {} }
-
-  let(:default_options) do
-    {
-      method:      method,
-      object_name: object_name,
-      value:       value,
-      options:     options
-    }
+RSpec.describe HotwiredComponent::Forms::LabelComponent, type: :component do
+  subject do
+    described_class.new(
+      method:      :field,
+      object_name: :mock_model,
+      value:       "Field",
+      options:     {
+        class: "label"
+      }
+    )
   end
 
-  subject { described_class.new(**default_options) }
+  let(:css_classes) do
+    "label.hotwired-component-forms-label.label" \
+    "[for='mock_model_field']" \
+    "[data-controller='hotwired-component--forms--label-component']"
+  end
 
-  describe "render" do
-    context "default label" do
-      it "should render a valid label" do
-        render(subject)
+  it "should render the component" do
+    render_inline(subject)
 
-        expect(rendered).to have_css(
-          ".hotwired-component-tw-forms-label" \
-          "[data-controller='hotwired-component--tw--forms--label--component']"
-        )
+    expect(rendered_component).to have_css(css_classes)
+    expect(rendered_component).to have_text("Field")
+  end
 
-        expect(rendered).to have_text("Email")
-      end
+  context "with block" do
+    subject do
+      described_class.new(
+        method:      :field,
+        object_name: :mock_model,
+        options:     {
+          class: "label"
+        }
+      )
     end
 
-    context "explicit label" do
-      let(:value) { "Text" }
-      it "should render a valid label" do
-        render(subject)
-        expect(rendered).to have_text("Text")
+    it "should render the component with the correct value" do
+      render_inline(subject) do
+        "test"
       end
+
+      expect(rendered_component).to have_text("test")
+    end
+  end
+
+  context "with no value" do
+    subject do
+      described_class.new(
+        method:      :field,
+        object_name: :mock_model,
+        options:     {
+          class: "label"
+        }
+      )
     end
 
-    context "with block" do
-      it "should render a valid label" do
-        render(subject) do
-          "In Block"
-        end
+    it "should render with the method name as the label" do
+      render_inline(subject)
 
-        expect(rendered).to have_text("In Block")
-      end
-    end
-
-    context "object_name is symbol" do
-      let(:object_name) { :user }
-
-      it "should render correctly" do
-        expect { render(subject) }.to_not raise_error
-      end
+      expect(rendered_component).to have_text("Field")
     end
   end
 end

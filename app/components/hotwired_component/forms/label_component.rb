@@ -1,41 +1,40 @@
 # frozen_string_literal: true
 
 module HotwiredComponent
-  module Tw
-    module Forms
-      class LabelComponent < TwComponent
-        def initialize(
-          method:,
-          object_name:,
-          value: nil,
-          options: {}
+  module Forms
+    class LabelComponent < BaseComponent
+      def initialize(
+        method:,
+        object_name:,
+        value: nil,
+        options: {}
+      )
+        super
+        @method      = method
+        @object_name = object_name
+        @value       = value
+        @options     = options.merge(
+          class: css_classes(options.delete(:class)),
+          data:  {
+            controller: "hotwired-component--forms--label-component"
+          }
         )
-          super
-          @method      = method
-          @object_name = object_name
-          @value       = value
-          @options     = options.merge(
-            class: css_classes(options.delete(:class))
-          )
-        end
+      end
 
-        def css_classes(additional)
-          (["hotwired-component-tw-label"] + Tw.label_classes + [additional])
-            .compact
-            .join(" ")
-        end
+      def css_classes(additional)
+        "hotwired-component-forms-label #{additional}"
+      end
 
-        private
+      private
 
-        attr_reader :method, :object_name, :options, :value
+      attr_reader :method, :object_name, :options, :value
 
-        def content
-          super || value || method.to_s.titleize
-        end
+      def content
+        super || value || method.to_s.titleize
+      end
 
-        def render?
-          !content.blank?
-        end
+      def render?
+        !content.blank?
       end
     end
   end

@@ -10,3 +10,4 @@
 /spec/dummy/tmp/
 .byebug_history
 *.swp
+coverage/**
