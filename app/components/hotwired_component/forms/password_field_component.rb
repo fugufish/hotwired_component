@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 module HotwiredComponent
-  module Tw
-    module Forms
-      class PasswordFieldComponent < InputComponent
-        private
+  module Forms
+    class PasswordFieldComponent < InputComponent
+      INPUT_TYPE = "password"
 
-        def text_field_tag(*args)
-          password_field_tag(*args)
-        end
+      private
+
+      def field_tag(*args)
+        password_field_tag(*args)
       end
     end
   end

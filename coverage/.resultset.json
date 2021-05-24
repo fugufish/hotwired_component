@@ -28,7 +28,7 @@
           null
         ]
       },
-      "/home/fugufish/Code/hotwired_component/app/components/hotwired_component/forms/label_component.rb": {
+      "/home/fugufish/Code/hotwired_component/app/components/hotwired_component/forms/email_field_component.rb": {
         "lines": [
           null,
           null,
@@ -37,14 +37,31 @@
           1,
           1,
           null,
+          1,
+          null,
+          1,
+          1,
           null,
           null,
+          null,
+          null
+        ]
+      },
+      "/home/fugufish/Code/hotwired_component/app/components/hotwired_component/forms/input_component.rb": {
+        "lines": [
           null,
           null,
           1,
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null,
           null,
@@ -53,8 +70,6 @@
           null,
           null,
           null,
-          1,
-          1,
           null,
           null,
           1,
@@ -62,11 +77,15 @@
           1,
           null,
           1,
-          2,
+          1,
           null,
           null,
           1,
           1,
+          null,
+          null,
+          1,
+          0,
           null,
           null,
           null,
@@ -84,6 +103,6 @@
         ]
       }
     },
-    "timestamp": 1621869417
+    "timestamp": 1621872433
   }
 }

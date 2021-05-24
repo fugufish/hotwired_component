@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-05-24T09:16:57-06:00">2021-05-24T09:16:57-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-05-24T10:07:13-06:00">2021-05-24T10:07:13-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  97.22%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="green">
-         1.04
+       <span class="red">
+         0.97
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>5</b> files in total.
+    <b>6</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>27</b> relevant lines,
-    <span class="green"><b>27</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>36</b> relevant lines,
+    <span class="green"><b>35</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  97.22%
 </span>
 )
   </div>
@@ -82,13 +82,24 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#0105ebd74bebe0038bf9bc968d7f1b2cfc234fac" class="src_link" title="app/components/hotwired_component/forms/label_component.rb">app/components/hotwired_component/forms/label_component.rb</a></td>
+            <td class="strong t-file__name"><a href="#20c86b183ae97f9a890c9317d081a1b9ac3cac59" class="src_link" title="app/components/hotwired_component/forms/email_field_component.rb">app/components/hotwired_component/forms/email_field_component.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">41</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.06</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#f24d3f9035632fae07ce62107cd86ed80685331d" class="src_link" title="app/components/hotwired_component/forms/input_component.rb">app/components/hotwired_component/forms/input_component.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">94.74 %</td>
+            <td class="cell--number">41</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">0.95</td>
             
           </tr>
         
@@ -239,9 +250,9 @@
 </div>
 
       
-        <div class="source_table" id="0105ebd74bebe0038bf9bc968d7f1b2cfc234fac">
+        <div class="source_table" id="20c86b183ae97f9a890c9317d081a1b9ac3cac59">
   <div class="header">
-    <h3>app/components/hotwired_component/forms/label_component.rb</h3>
+    <h3>app/components/hotwired_component/forms/email_field_component.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -253,8 +264,8 @@
     
 
     <div class="t-line-summary">
-      <b>17</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>7</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -316,7 +327,7 @@
 
             
 
-            <code class="ruby">    class LabelComponent &lt; BaseComponent</code>
+            <code class="ruby">    class EmailFieldComponent &lt; InputComponent</code>
           </li>
         </div>
       
@@ -327,7 +338,7 @@
 
             
 
-            <code class="ruby">      def initialize(</code>
+            <code class="ruby">      INPUT_TYPE = &quot;email&quot;</code>
           </li>
         </div>
       
@@ -338,18 +349,18 @@
 
             
 
-            <code class="ruby">        method:,</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">        object_name:,</code>
+            
+
+            <code class="ruby">      private</code>
           </li>
         </div>
       
@@ -360,34 +371,197 @@
 
             
 
-            <code class="ruby">        value: nil,</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">        options: {}</code>
+            
+
+            <code class="ruby">      def field_tag(*args)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      )</code>
+            
+
+            <code class="ruby">        email_field_tag(*args)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f24d3f9035632fae07ce62107cd86ed80685331d">
+  <div class="header">
+    <h3>app/components/hotwired_component/forms/input_component.rb</h3>
+    <h4>
+      <span class="green">
+  94.74%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>19</b> relevant lines.
+      <span class="green"><b>18</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module HotwiredComponent</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  module Forms</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    class InputComponent &lt; BaseComponent</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      INPUT_TYPE = &quot;text&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def initialize(method:, object:, object_name:, options:)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
             <span class="hits">1</span>
             
 
@@ -398,7 +572,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
+          <li class="covered" data-hits="1" data-linenumber="10">
             <span class="hits">1</span>
             
 
@@ -409,7 +583,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        @content     = content</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        @object      = object</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
@@ -420,24 +616,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        @value       = value</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="14">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">        @options     = options.merge(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">          id:    &quot;#{object_name}_#{method}&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">          name:  &quot;#{object_name}[#{method}]&quot;,</code>
           </li>
         </div>
       
@@ -470,7 +677,7 @@
 
             
 
-            <code class="ruby">            controller: &quot;hotwired-component--forms--label-component&quot;</code>
+            <code class="ruby">            controller: &quot;hotwired-component--forms--#{INPUT_TYPE}-component&quot;</code>
           </li>
         </div>
       
@@ -525,29 +732,29 @@
 
             
 
-            <code class="ruby">      def css_classes(additional)</code>
+            <code class="ruby">      private</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        &quot;hotwired-component-forms-label #{additional}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
+            <code class="ruby">      attr_reader :method, :object, :object_name, :options</code>
           </li>
         </div>
       
@@ -569,29 +776,29 @@
 
             
 
-            <code class="ruby">      private</code>
+            <code class="ruby">      def name</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="30">
+          <li class="covered" data-hits="1" data-linenumber="29">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      attr_reader :method, :object_name, :options, :value</code>
+            <code class="ruby">        &quot;#{object_name}[#{method}]&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -613,18 +820,18 @@
 
             
 
-            <code class="ruby">      def content</code>
+            <code class="ruby">      def css_classes(additional)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="33">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        super || value || method.to_s.titleize</code>
+            <code class="ruby">        &quot;hotwired-component-forms-#{INPUT_TYPE} #{additional}&quot;</code>
           </li>
         </div>
       
@@ -657,18 +864,18 @@
 
             
 
-            <code class="ruby">      def render?</code>
+            <code class="ruby">      def field_tag(*args)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="37">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="37">
+            
             
 
             
 
-            <code class="ruby">        !content.blank?</code>
+            <code class="ruby">        text_field_tag(*args)</code>
           </li>
         </div>
       

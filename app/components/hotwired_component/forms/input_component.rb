@@ -32,6 +32,10 @@ module HotwiredComponent
       def css_classes(additional)
         "hotwired-component-forms-#{INPUT_TYPE} #{additional}"
       end
+
+      def field_tag(*args)
+        text_field_tag(*args)
+      end
     end
   end
 end
