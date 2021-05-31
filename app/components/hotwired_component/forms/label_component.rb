@@ -6,12 +6,14 @@ module HotwiredComponent
       def initialize(
         method:,
         object_name:,
+        object:,
         value: nil,
         options: {}
       )
         super
         @method      = method
         @object_name = object_name
+        @object      = object
         @value       = value
         @options     = options.merge(
           class: css_classes(options.delete(:class)),
@@ -22,12 +24,14 @@ module HotwiredComponent
       end
 
       def css_classes(additional)
-        "hotwired-component-forms-label #{additional}"
+        classes = "hotwired-component-forms-label #{additional}"
+        classes = "#{classes} has-error" unless object.errors[method].blank?
+        classes
       end
 
       private
 
-      attr_reader :method, :object_name, :options, :value
+      attr_reader :method, :object_name, :options, :value, :object
 
       def content
         super || value || method.to_s.titleize

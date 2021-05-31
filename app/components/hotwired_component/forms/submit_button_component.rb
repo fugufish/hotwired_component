@@ -1,32 +1,25 @@
 # frozen_string_literal: true
 
 module HotwiredComponent
-  module Tw
-    module Forms
-      class SubmitButtonComponent < TwComponent
-        def initialize(value:, options:)
-          super
-          @value   = value
-          @options = options.merge(
-            class: css_classes(options.delete(:class)),
-            data:  {
-              controller: "hotwired-component-tw--forms--input--component"
-            }
-          )
-        end
+  module Forms
+    class SubmitButtonComponent < BaseComponent
+      def initialize(value:, options:)
+        super
+        @value   = value
+        @options = options.merge(
+          class: css_classes(options.delete(:class)),
+          data:  options.delete(:data).merge({
+            controller: "hotwired-component-forms--input--component"
+          })
+        )
+      end
 
-        private
+      private
 
-        attr_reader :value, :options
+      attr_reader :value, :options
 
-        def css_classes(additional)
-          (
-            ["hotwired-component-tw-submit-button"] +
-            Tw.submit_button_classes +
-            [additional]
-          ).compact
-            .join(" ")
-        end
+      def css_classes(additional)
+        "hotwired-component-submit-button #{additional}"
       end
     end
   end

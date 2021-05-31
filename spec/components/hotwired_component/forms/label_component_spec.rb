@@ -6,6 +6,7 @@ RSpec.describe HotwiredComponent::Forms::LabelComponent, type: :component do
   subject do
     described_class.new(
       method:      :field,
+      object:      MockModel.new,
       object_name: :mock_model,
       value:       "Field",
       options:     {
@@ -31,6 +32,7 @@ RSpec.describe HotwiredComponent::Forms::LabelComponent, type: :component do
     subject do
       described_class.new(
         method:      :field,
+        object:      MockModel.new,
         object_name: :mock_model,
         options:     {
           class: "label"
@@ -51,6 +53,7 @@ RSpec.describe HotwiredComponent::Forms::LabelComponent, type: :component do
     subject do
       described_class.new(
         method:      :field,
+        object:      MockModel.new,
         object_name: :mock_model,
         options:     {
           class: "label"
@@ -62,6 +65,28 @@ RSpec.describe HotwiredComponent::Forms::LabelComponent, type: :component do
       render_inline(subject)
 
       expect(rendered_component).to have_text("Field")
+    end
+  end
+
+  context "with errors" do
+    let(:css_classes) { "label.has-error" }
+
+    subject do
+      described_class.new(
+        method:      :field,
+        object:      MockModel.new(errors: { field: "an error" }),
+        object_name: :mock_model,
+        value:       "Field",
+        options:     {
+          class: "label"
+        }
+      )
+    end
+
+    it "should render with the 'has-error' class" do
+      render_inline(subject)
+
+      expect(rendered_component).to have_css(css_classes)
     end
   end
 end
