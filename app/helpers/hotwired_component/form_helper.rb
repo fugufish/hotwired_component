@@ -9,6 +9,7 @@ module HotwiredComponent
 
         template.render(Forms::LabelComponent.new(
           method:      method,
+          builder:     self,
           object_name: object_name,
           object:      object,
           options:     options,
@@ -17,7 +18,8 @@ module HotwiredComponent
       end
 
       def text_field(method, options = {})
-        template.render(Forms::InputComponent.new(
+        template.render(Forms::TextFieldComponent.new(
+          builder:     self,
           method:      method,
           object_name: object_name,
           object:      object,
@@ -35,6 +37,7 @@ module HotwiredComponent
 
       def submit(value = "Submit", options = {})
         template.render(Forms::SubmitButtonComponent.new(
+          object:  object,
           value:   value,
           options: options
         ))
@@ -56,8 +59,17 @@ module HotwiredComponent
     end
 
     def hw_form_for(model, options = {}, &block)
+      action = model.respond_to?(:persisted?) && model.persisted? ? :edit : :new
       form_for(
-        model, options.merge(builder: FormBuilder), &block
+        model, options.merge(
+          builder: FormBuilder,
+          data:    {
+            controller: "hotwired-component--form"
+          },
+          html:    {
+            class: "hotwired-component-form #{dom_class(model, action)}"
+          }
+        ), &block
       )
     end
 

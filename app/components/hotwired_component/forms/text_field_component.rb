@@ -2,11 +2,11 @@
 
 module HotwiredComponent
   module Forms
-    class EmailFieldComponent < InputComponent
+    class TextFieldComponent < InputComponent
       private
 
       def field_type
-        "email"
+        "text"
       end
     end
   end

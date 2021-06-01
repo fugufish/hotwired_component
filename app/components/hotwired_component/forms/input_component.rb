@@ -3,41 +3,40 @@
 module HotwiredComponent
   module Forms
     class InputComponent < BaseComponent
-      INPUT_TYPE = "text"
-
-      def initialize(method:, object:, object_name:, options:)
-        super
+      def initialize(builder:, method:, object_name:, **args)
         @method      = method
-        @content     = content
-        @object      = object
+        super(**args)
+        @builder     = builder
         @object_name = object_name
         @options     = options.merge(
-          id:    "#{object_name}_#{method}",
-          name:  "#{object_name}[#{method}]",
-          class: css_classes(options.delete(:class)),
-          data:  {
-            controller: "hotwired-component--forms--#{INPUT_TYPE}-component"
+          id:   "#{object_name}_#{method}",
+          name: "#{object_name}[#{method}]",
+          data: {
+            controller: "hotwired-component--forms--#{field_type}-component"
           }
         )
       end
 
       private
 
-      attr_reader :method, :object, :object_name, :options
+      attr_reader :method, :object_name, :builder
 
       def name
         "#{object_name}[#{method}]"
       end
 
-      def css_classes(additional)
-        classes = "hotwired-component-forms-#{INPUT_TYPE}"
-        classes = "#{classes} #{additional}" if additional
+      def css_base_class
+        classes = "hotwired-component-forms-#{field_type}"
         classes = "#{classes} has-error" unless object.errors[method].empty?
         classes
       end
 
       def field_tag(*args)
-        text_field_tag(*args)
+        public_send("#{field_type}_field_tag", *args)
+      end
+
+      def field_type
+        raise NotImplementedError
       end
     end
   end

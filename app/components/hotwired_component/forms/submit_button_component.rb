@@ -3,23 +3,23 @@
 module HotwiredComponent
   module Forms
     class SubmitButtonComponent < BaseComponent
-      def initialize(value:, options:)
-        super
+      def initialize(value:, **args)
+        super(**args)
         @value   = value
         @options = options.merge(
           class: css_classes(options.delete(:class)),
           data:  options.delete(:data).merge({
-            controller: "hotwired-component-forms--input--component"
+            controller: "hotwired-component-forms--submit--component"
           })
         )
       end
 
       private
 
-      attr_reader :value, :options
+      attr_reader :value
 
-      def css_classes(additional)
-        "hotwired-component-submit-button #{additional}"
+      def css_base_class
+        "hotwired-component-submit-button"
       end
     end
   end
