@@ -30,13 +30,10 @@ module HotwiredComponent
       end
 
       def css_classes(additional)
-        classes = "hotwired-component-forms-#{INPUT_TYPE} #{additional} #{error}"
+        classes = "hotwired-component-forms-#{INPUT_TYPE}"
+        classes = "#{classes} #{additional}" if additional
         classes = "#{classes} has-error" unless object.errors[method].empty?
         classes
-      end
-
-      def error
-        "error" unless object.errors[method].empty?
       end
 
       def field_tag(*args)
