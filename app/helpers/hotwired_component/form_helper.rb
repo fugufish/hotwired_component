@@ -62,7 +62,7 @@ module HotwiredComponent
       action = model.respond_to?(:persisted?) && model.persisted? ? :edit : :new
       form_for(
         model, options.merge(
-          builder: FormBuilder,
+          builder: options.delete(:builder) || FormBuilder,
           data:    {
             controller: "hotwired-component--form"
           },
