@@ -24,5 +24,11 @@ And run:
 $ rails g hotwired_component:install
 ```
 
+
+## Forms
+
+HotwiredComponent adds it's own form helper, `hw_form_with` & `hw_form_for`. This helper may be used
+to create standardized forms that are already set up to be used with Hotwire and Stimulus.
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Rspec.describe <%= class_name %>Component, type: :component do
+Rspec.describe HotwiredComponent::Forms::BaseComponent, type: :component do
   it "rendered component" do
     render_inline(described_class.new)
 
